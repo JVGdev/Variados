@@ -1,0 +1,129 @@
+
+body {
+
+  background-color: white;
+}
+
+
+h1 {
+    font-size:2.5vw;
+    
+  }
+  
+  i {
+    font-style: italic;
+  }
+  
+  b {
+    font-weight: bold;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #99ff99;
+  
+  }
+
+h2 {
+    font-size: 1.5vw;
+    
+}
+  
+  body {
+  
+      display: block;  
+      text-align: center;
+      background-image: url(../img/basic/bg.jpg);
+      font-size: 2.5vw;
+      font-family: basic;
+  
+  }
+  
+  header {
+      text-align: center;
+      display:flex;
+      justify-content: space-between; 
+      background-color: #ffffff;
+      padding: 0px 300px 0px 0px;
+      border: 2px black solid;
+      height: 7%;
+  }
+  
+header h1 {
+    color: rgb(0, 0, 0);
+    display: inline-flex;
+    font-size: 2.3vw;
+    background-color: #ffffff; 
+    padding: 7px;
+    border-radius: 5px;
+    margin: 0px 38% 0 20%;
+}
+  
+  
+  header img {
+      display: inline-flex;
+      margin: 0px 5% 0px 0%;
+      border: solid black 1px;
+  }
+  
+  .dropbtn {
+    background-color: #c27bd8;
+    color: var(--fonte-padrao);
+    padding: 16px;
+    font-size: 10px;
+    width: 50px;
+    border: solid black 1px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  
+  .dropdown {
+    position: absolute;
+    display: inline-block;
+    margin-left: 87%;
+  
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #b55dcf;
+    font-size: 20px;
+    min-width: 160px;
+    z-index: 1;
+    right: 0;
+  }
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+  
+  
+footer {
+    display:flex;
+    justify-content: space-around; 
+    background-color: #c27bd8;
+    padding: 20px 0px;
+    border: 2px black solid;
+    height: 10%;
+}
+  
+footer h1 {
+    font-size: 26px;
+    background-color: #b55dcf;
+    padding: 5px;
+    border: 1px black solid;
+}
