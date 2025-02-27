@@ -1,20 +1,45 @@
 javali()(
-	criarClass(){
+
+path="./"
+package="javali"
+actDir=${PWD##*/} #Pegando dir atual
+# actDir=${actDir:-/} #Corrigindo para caso de root
+
+criarClass(){
 	# $1 = nome; $2 = path
 
-		echo "public class $1{
+	if ["$actDir" == "com"]; then
+		echo " "
+	fi
+
+	echo "public class $1{
 	/*
 		Entre paramêtros e argumentos aqui, meu nobre.
 	*/
 	public static void main(String[] args){
 		// Comece escrevendo aqui.
-	}
 }
-" 			>> $2/$1.java
-	}
+}
+	
+" >> $2/$1.java
+}
+	
+# Garantir que só possa ser usado de dentro da 'com' ou de um pacote
+criarPClass(){
+	#$1 = nomeClasse; $2=nomePacote; 
+		
+	echo "
+package ${2/"/"/"."};
 
-path="./"
-package="javali"
+public class $1{
+	
+	public static void main(String[] args){
+		// Comece escrevendo aqui.
+	}
+} " >> $2/$1.java
+}
+
+
 
 cat << "EOF"	
 	      _,-""""-..__
@@ -28,7 +53,7 @@ cat << "EOF"
                    ||`;      / / | |
                    //_;`    ,_;' ,_;
 
---------------------"
+    --------------------------------------
 EOF
 
 
@@ -43,14 +68,17 @@ while test $# -gt 0; do
 			echo "Opção:"
 			echo "-h, --help	Mostra essa mensagem ;)"
 			echo "-f, --folder	Cria um diretório Java para alocar a classe."
+			echo "-c, --class	Cria uma classe Java."
       			echo " "
 			return
 		;;
 		-c|--class)
 			shift
 		
-			main="$1"
-			echo "Nome da classe definida como ${main};"
+			criarClass $1 ${path}
+
+			echo "-> Classe '$1' criada com sucesso em '${path}' :)"
+			echo "____________________"
 
 			shift
 		;;
@@ -68,6 +96,19 @@ while test $# -gt 0; do
 			shift
 		
 		;;
+		-p|--package)
+			shift 
+			
+			if [ "$actDir" == "src" ] && [ ! -d "./com/" ]; then
+				mkdir com/
+			fi
+
+			mkdir com/$1
+			criarPClass $2 com/$1
+			
+			shift
+		;;
+
 		*)
 			break;
 
@@ -75,10 +116,6 @@ while test $# -gt 0; do
 done		#Fim das flags
 
 
-criarClass $1 ${path}
-
-echo "-> Classe '$1' criada com sucesso em '${path}' :)"
-echo "____________________"
 echo " "
 
 
