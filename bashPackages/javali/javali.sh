@@ -108,7 +108,14 @@ while test $# -gt 0; do
 			
 			shift
 		;;
+		-gs|--getset)
+			shift
+			
+			"/home/k0lnz/Codigos/bashPackages/javali/getSetters" $1
+			mv temp-$1 $1
 
+			shift
+		;;
 		*)
 			break;
 
