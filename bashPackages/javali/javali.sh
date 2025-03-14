@@ -27,14 +27,14 @@ criarClass(){
 # Garantir que só possa ser usado de dentro da 'com' ou de um pacote
 criarPClass(){
 	#$1 = nomeClasse; $2=nomePacote; 
-		
+	nomePac="${2////.}"	
 	echo "
-package ${2/"/"/"."};
+package $nomePac;
 
 public class $1{
 	
-	public static void main(String[] args){
-		// Comece escrevendo aqui.
+	public $1(){
+	
 	}
 } " >> $2/$1.java
 }
