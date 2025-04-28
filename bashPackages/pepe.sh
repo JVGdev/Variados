@@ -58,7 +58,7 @@ EOF
 fi
 	for file in $@; do
 		filename=`basename -s .cpp ${file}`
-		g++ -o ${filename} ${filename}.cpp
+		g++ -o ${filename} ${filename}.cpp -O3
 		./${filename}
 	done
 shift "$((OPTIND -1))"
