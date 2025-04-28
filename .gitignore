@@ -1,2 +1,9 @@
-ia/venv/
-estagioI/java/study1/
+*
+!/**/
+!*.*
+*.exe
+**/clarissa.txt
+*.o
+./estagioI/
+./ia/
+
