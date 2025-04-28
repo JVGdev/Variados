@@ -4,6 +4,6 @@
 *.exe
 **/clarissa.txt
 *.o
-./estagioI/
-./ia/
+estagioI/
+ia/
 
