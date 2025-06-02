@@ -8,7 +8,8 @@ _start:
 	
 	mov rax, out1
 	mov rdi, buff1
-	mov rsi, 0
+	mov rsi, 6123
+	mov [out1], dword 60;
 	call sbobf
 
 	lea rdi, [buff1]
@@ -24,7 +25,10 @@ _start:
 	syscall
 
 section .data
-buff1: db "Alo, estou printando uma mensagem", 10, 0
+buff1: db "Alo, estou printando uma mensagem %d isso veio depois da concatenação.", 10, 0
+str1: db "(isso está sendo 'concatenado' em runtime)", 0
 
 section .bss
 out1: resb 60
+
+

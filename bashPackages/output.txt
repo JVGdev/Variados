@@ -1,0 +1,15 @@
+.
+├── javali
+│   ├── aaa.txt
+│   ├── classe.java
+│   ├── getSetters
+│   ├── getSetters.cpp
+│   ├── javali.sh
+│   └── src
+├── output.txt
+├── pepe.sh
+├── requiem
+│   └── requiem.sh
+└── sharingan.sh
+
+4 directories, 9 files
